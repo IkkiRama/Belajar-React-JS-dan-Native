@@ -4,9 +4,11 @@ import SampleComponent from "./src/pages/SampleComponent";
 import Styling from "./src/pages/Styling";
 import LifeCycle from "./src/pages/Life Cycle";
 import { useState } from "react";
-import FuncLifeCycle from "./src/Fungsi Life Cycle";
+// import FuncLifeCycle from "./src/pages/Fungsi Life Cyclee";
 import ComponentDinamis from "./src/pages/Component Dinamis";
 import StateDinamis from "./src/pages/State Dinamis";
+import Communication from "./src/pages/Communication";
+import ReactNativeSVG from "./src/pages/ReactNativeSVG";
 
 const App = () => {
   const [isShow, setIsShow] = useState(true);
@@ -23,7 +25,9 @@ const App = () => {
       {/* {isShow && <LifeCycle />} */}
       {/* {isShow && <FuncLifeCycle />} */}
       {/* <ComponentDinamis></ComponentDinamis> */}
-      <StateDinamis></StateDinamis>
+      {/* <StateDinamis></StateDinamis> */}
+      {/* <Communication></Communication> */}
+      <ReactNativeSVG></ReactNativeSVG>
     </ScrollView>
   );
 };

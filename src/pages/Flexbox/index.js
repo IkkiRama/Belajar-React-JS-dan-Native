@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
-import rifki from "../../assets/images/IKKI.jpg";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import Profile from "../../components/profile";
 
 const Flexbox = () => {
   const [subscribe, setSubscribe] = useState(200);
+  const [index, setIndex] = useState(100);
 
   setTimeout(() => {
     setSubscribe(400);
@@ -70,47 +71,7 @@ const Flexbox = () => {
           <Text style={styles.title}>Tentang</Text>
         </View>
 
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View
-            style={{
-              marginRight: 10,
-              marginTop: 20,
-              borderWidth: 1,
-              borderRadius: 50,
-              position: "relative",
-            }}
-          >
-            <Image
-              source={rifki}
-              style={{
-                width: 100,
-                height: 100,
-                borderRadius: 50,
-                backgroundColor: "red",
-              }}
-            />
-
-            <Text
-              style={{
-                position: "absolute",
-                padding: 5,
-                backgroundColor: "#1ed445",
-                borderRadius: 50,
-                right: 0,
-                top: -5,
-              }}
-            >
-              100
-            </Text>
-          </View>
-
-          <View>
-            <Text style={{ fontSize: 20, fontWeight: "600", marginBottom: 5 }}>
-              Rifki Romadhan kiamk
-            </Text>
-            <Text>{subscribe} Subscriber</Text>
-          </View>
-        </View>
+        <Profile subscribe={subscribe} index={index}></Profile>
       </ScrollView>
     </View>
   );
