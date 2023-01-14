@@ -6,6 +6,7 @@ import LifeCycle from "./src/pages/Life Cycle";
 import { useState } from "react";
 import FuncLifeCycle from "./src/Fungsi Life Cycle";
 import ComponentDinamis from "./src/pages/Component Dinamis";
+import StateDinamis from "./src/pages/State Dinamis";
 
 const App = () => {
   const [isShow, setIsShow] = useState(true);
@@ -21,7 +22,8 @@ const App = () => {
       {/* <Flexbox /> */}
       {/* {isShow && <LifeCycle />} */}
       {/* {isShow && <FuncLifeCycle />} */}
-      <ComponentDinamis></ComponentDinamis>
+      {/* <ComponentDinamis></ComponentDinamis> */}
+      <StateDinamis></StateDinamis>
     </ScrollView>
   );
 };
