@@ -1,5 +1,5 @@
 import {
-  Button,
+  Alert,
   StyleSheet,
   Text,
   TextInput,
@@ -18,7 +18,16 @@ const CRUD = () => {
   const [pekerjaan, setPekerjaan] = useState("");
   const [keyword, setKeyword] = useState("");
   const [isEdit, setIsEdit] = useState(false);
-  const url = "https://8b57-114-79-46-155.ap.ngrok.io/profiles";
+  const ngrok = "https://fcbe-114-79-46-10.ap.ngrok.io";
+  const url = `${ngrok}/profiles`;
+  // const url = "https://10.0.2.2/profiles";
+
+  // To Start JSON_SERVER
+  // json-server --watch data/data.json --port 3004
+
+  // TO Start NGROk
+  // ngrok http {port berapa, misal 3004}
+  // ngrok http 3004
 
   useEffect(() => {
     getData();
@@ -30,21 +39,22 @@ const CRUD = () => {
       .then((data) => setUsers(data.data))
       .catch((err) => console.log(err.message));
   };
-
   const reset = () => {
     setNama("");
     setEmail("");
     setPekerjaan("");
   };
-
   const postData = async () => {
-    let dataUser = { nama, email, pekerjaan };
-    await axios.post(url, dataUser).catch((err) => console.log(err.message));
-    alert("Data Berhasil Ditambahkan");
-    reset();
-    getData();
+    if (nama.trim() === "" || email.trim() === "" || pekerjaan.trim() === "") {
+      Alert.alert("Peringgatan", "Isi Semua Form Terlebih Dahulu");
+    } else {
+      let dataUser = { nama, email, pekerjaan };
+      await axios.post(url, dataUser).catch((err) => console.log(err.message));
+      Alert.alert("Peringatan", "Data Berhasil Ditambahkan");
+      reset();
+      getData();
+    }
   };
-
   const putData = (id) => {
     axios.get(`${url}/${id}`).then((data) => {
       setNama(data.data.nama);
@@ -59,7 +69,7 @@ const CRUD = () => {
   const editData = (id) => {
     let dataUser = { nama, email, pekerjaan };
     axios.patch(`${url}/${id}`, dataUser);
-    alert("Data Berhasil Diubah");
+    Alert.alert("Peringatan", "Data Berhasil Diubah");
     reset();
     getData();
     setIsEdit(false);
@@ -83,10 +93,20 @@ const CRUD = () => {
   };
 
   const deleteData = (id) => {
-    axios.delete(`${url}/${id}`).then((data) => {
-      setId(0);
-      alert("Data Berhasil Dihapus");
-    });
+    Alert.alert("Peringatan", "Apakah Yakin Anda Akan Menghapus Data Ini?", [
+      {
+        text: "Tidak",
+        onPress: () => Alert.alert("Peringatan", "Data Tidak Dihapus"),
+      },
+      {
+        text: "Yakin",
+        onPress: () =>
+          axios.delete(`${url}/${id}`).then((data) => {
+            setId(0);
+            Alert.alert("Peringatan", "Data Berhasil Dihapus");
+          }),
+      },
+    ]);
     getData();
   };
 
