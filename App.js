@@ -1,4 +1,4 @@
-import { ScrollView, View } from "react-native";
+import { RefreshControl, ScrollView, View } from "react-native";
 import Flexbox from "./src/pages/Flexbox";
 import SampleComponent from "./src/pages/SampleComponent";
 import Styling from "./src/pages/Styling";
@@ -12,7 +12,8 @@ import ReactNativeSVG from "./src/pages/ReactNativeSVG";
 import CallAPI from "./src/pages/CallAPI";
 import CallAPIAxios from "./src/pages/axios";
 import CRUD from "./src/pages/CRUD";
-
+import Refresh from "./src/pages/Refresh";
+import CobaRefresh from "./src/pages/Refresh/coba";
 const App = () => {
   const [isShow, setIsShow] = useState(true);
 
@@ -21,20 +22,24 @@ const App = () => {
   }, 10000);
 
   return (
-    <ScrollView>
-      {/* <SampleComponent /> */}
-      {/* <Styling /> */}
-      {/* <Flexbox /> */}
-      {/* {isShow && <LifeCycle />} */}
-      {/* {isShow && <FuncLifeCycle />} */}
-      {/* <ComponentDinamis></ComponentDinamis> */}
-      {/* <StateDinamis></StateDinamis> */}
-      {/* <Communication></Communication> */}
-      {/* <ReactNativeSVG></ReactNativeSVG> */}
-      {/* <CallAPI></CallAPI> */}
-      {/* <CallAPIAxios></CallAPIAxios> */}
-      <CRUD></CRUD>
-    </ScrollView>
+    <View>
+      <ScrollView>
+        {/* <SampleComponent /> */}
+        {/* <Styling /> */}
+        {/* <Flexbox /> */}
+        {/* {isShow && <LifeCycle />} */}
+        {/* {isShow && <FuncLifeCycle />} */}
+        {/* <ComponentDinamis></ComponentDinamis> */}
+        {/* <StateDinamis></StateDinamis> */}
+        {/* <Communication></Communication> */}
+        {/* <ReactNativeSVG></ReactNativeSVG> */}
+        {/* <CallAPI></CallAPI> */}
+        {/* <CallAPIAxios></CallAPIAxios> */}
+        {/* <CRUD></CRUD> */}
+      </ScrollView>
+      {/* <Refresh></Refresh> */}
+      <CobaRefresh></CobaRefresh>
+    </View>
   );
 };
 
