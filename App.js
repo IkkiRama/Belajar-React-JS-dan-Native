@@ -16,6 +16,8 @@ import Refresh from "./src/pages/Refresh";
 import CobaRefresh from "./src/pages/Refresh/coba";
 import ButtonTouchablesPressable from "./src/pages/ButtonTouchablesPressable";
 import CobaModal from "./src/pages/CobaModal";
+import CobaNavigator from "./src/pages/Navigator";
+
 const App = () => {
   const [isShow, setIsShow] = useState(true);
 
@@ -39,7 +41,8 @@ const App = () => {
         {/* <CallAPIAxios></CallAPIAxios> */}
         {/* <CRUD></CRUD> */}
         {/* <ButtonTouchablesPressable></ButtonTouchablesPressable> */}
-        <CobaModal></CobaModal>
+        {/* <CobaModal></CobaModal> */}
+        <CobaNavigator></CobaNavigator>
       </ScrollView>
       {/* <Refresh></Refresh> */}
       {/* <CobaRefresh></CobaRefresh> */}
