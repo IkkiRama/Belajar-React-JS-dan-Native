@@ -15,6 +15,7 @@ import CRUD from "./src/pages/CRUD";
 import Refresh from "./src/pages/Refresh";
 import CobaRefresh from "./src/pages/Refresh/coba";
 import ButtonTouchablesPressable from "./src/pages/ButtonTouchablesPressable";
+import CobaModal from "./src/pages/CobaModal";
 const App = () => {
   const [isShow, setIsShow] = useState(true);
 
@@ -37,7 +38,8 @@ const App = () => {
         {/* <CallAPI></CallAPI> */}
         {/* <CallAPIAxios></CallAPIAxios> */}
         {/* <CRUD></CRUD> */}
-        <ButtonTouchablesPressable></ButtonTouchablesPressable>
+        {/* <ButtonTouchablesPressable></ButtonTouchablesPressable> */}
+        <CobaModal></CobaModal>
       </ScrollView>
       {/* <Refresh></Refresh> */}
       {/* <CobaRefresh></CobaRefresh> */}
